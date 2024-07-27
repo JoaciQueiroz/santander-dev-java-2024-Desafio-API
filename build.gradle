@@ -1,3 +1,4 @@
+
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.8'
@@ -27,6 +28,14 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
+
+
+tasks.jar {
+	manifest {
+		attributes["Main-Class"] = "web.Qroz.Application"
+	}
+}
+
 
 tasks.named('test') {
 	useJUnitPlatform()
